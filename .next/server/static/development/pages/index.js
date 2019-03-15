@@ -212,9 +212,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_flip_move__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-flip-move */ "react-flip-move");
+/* harmony import */ var react_flip_move__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_flip_move__WEBPACK_IMPORTED_MODULE_7__);
+
 
 
 
@@ -223,47 +227,70 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/maduabuchi/workspace/todoapp2/components/TodoItems.js";
 
 
+
 var TodoItems =
 /*#__PURE__*/
 function (_Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(TodoItems, _Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(TodoItems, _Component);
 
-  function TodoItems() {
+  function TodoItems(props) {
+    var _this;
+
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, TodoItems);
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(TodoItems).apply(this, arguments));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(TodoItems).call(this, props));
+    _this.createTask = _this.createTask.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    return _this;
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(TodoItems, [{
     key: "createTask",
     value: function createTask(item) {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+      var _this2 = this;
+
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("li", {
+        onClick: function onClick() {
+          return _this2.delete(item.key);
+        },
         key: item.key,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 5
+          lineNumber: 10
         },
         __self: this
       }, item.text);
+    }
+  }, {
+    key: "delete",
+    value: function _delete(key) {
+      this.props.delete(key);
     }
   }, {
     key: "render",
     value: function render() {
       var todoEntries = this.props.entries;
       var listItems = todoEntries.map(this.createTask);
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
+      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("ul", {
         className: "lists",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 21
         },
         __self: this
-      }, listItems);
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_flip_move__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        duration: 250,
+        easing: "ease-out",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: this
+      }, listItems));
     }
   }]);
 
   return TodoItems;
-}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (TodoItems);
 
@@ -315,6 +342,7 @@ function (_Component) {
       items: []
     };
     _this.addItem = _this.addItem.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
+    _this.deleteItem = _this.deleteItem.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
     return _this;
   }
 
@@ -338,6 +366,16 @@ function (_Component) {
       e.preventDefault();
     }
   }, {
+    key: "deleteItem",
+    value: function deleteItem(key) {
+      var filteredItems = this.state.items.filter(function (item) {
+        return item.key !== key;
+      });
+      this.setState({
+        items: filteredItems
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -346,21 +384,21 @@ function (_Component) {
         className: "listMain",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 42
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "header",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 43
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
         onSubmit: this.addItem,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 44
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
@@ -371,21 +409,22 @@ function (_Component) {
         placeholder: "Enter todo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 45
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
         type: "submit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 46
         },
         __self: this
       }, "Add"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_TodoItems__WEBPACK_IMPORTED_MODULE_8__["default"], {
         entries: this.state.items,
+        delete: this.deleteItem,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 49
         },
         __self: this
       }));
@@ -1892,6 +1931,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom");
+
+/***/ }),
+
+/***/ "react-flip-move":
+/*!**********************************!*\
+  !*** external "react-flip-move" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-flip-move");
 
 /***/ }),
 
