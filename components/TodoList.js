@@ -5,7 +5,11 @@ class TodoList extends Component{
   constructor(props){
     super(props);
     this.state = {
-      items:[]
+      items:[
+        {id:1,text:"boil egg" },
+        {id:2, text:"code stuff"},
+        {id:3, text: "sleep"}
+      ]
     }
     this.addItem = this.addItem.bind(this)
     this.deleteItem = this.deleteItem.bind(this)

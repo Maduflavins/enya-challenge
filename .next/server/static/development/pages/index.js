@@ -339,7 +339,16 @@ function (_Component) {
 
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(TodoList).call(this, props));
     _this.state = {
-      items: []
+      items: [{
+        id: 1,
+        text: "boil egg"
+      }, {
+        id: 2,
+        text: "code stuff"
+      }, {
+        id: 3,
+        text: "sleep"
+      }]
     };
     _this.addItem = _this.addItem.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
     _this.deleteItem = _this.deleteItem.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this));
@@ -384,21 +393,21 @@ function (_Component) {
         className: "listMain",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 46
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "header",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 47
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
         onSubmit: this.addItem,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 48
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
@@ -409,14 +418,14 @@ function (_Component) {
         placeholder: "Enter todo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 49
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
         type: "submit",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 50
         },
         __self: this
       }, "Add"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_TodoItems__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -424,7 +433,7 @@ function (_Component) {
         delete: this.deleteItem,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 53
         },
         __self: this
       }));
